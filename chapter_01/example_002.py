@@ -1,29 +1,16 @@
 #!/usr/bin/python3
 
-def removeDuplicates(nums: list) -> int:
+# 买卖股票的最佳时机2
+def maxProfit(prices: list) -> int:
 
-    indexs = []
-    i = 0
-    while nums.__len__() - 1 > i:
-        if nums[i] == nums[i + 1]:
-            indexs.append(i)
-        i = i + 1
-
-    i = indexs.__len__() - 1
-    while i >= 0:
-        nums.pop(indexs[i])
-        i = i - 1
-
-    print(indexs)
-    print(nums)
-    return nums.__len__()
+    return 0
 
 
 
 if __name__ == '__main__':
-    arr = [0, 0, 1, 1, 1, 2, 3, 4]
+    arr = []
     print(arr)
-    l = removeDuplicates(arr)
+    l = maxProfit(arr)
     print(l)
 
 

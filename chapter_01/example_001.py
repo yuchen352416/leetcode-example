@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# 从排序数组中删除重复项
 def removeDuplicates(nums: list) -> int:
 
     indexs = []
