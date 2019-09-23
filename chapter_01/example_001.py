@@ -2,7 +2,6 @@
 
 # 从排序数组中删除重复项
 def removeDuplicates(nums: list) -> int:
-
     indexs = []
     i = 0
     while nums.__len__() - 1 > i:
@@ -20,12 +19,8 @@ def removeDuplicates(nums: list) -> int:
     return nums.__len__()
 
 
-
 if __name__ == '__main__':
     arr = [0, 0, 1, 1, 1, 2, 3, 4]
     print(arr)
     l = removeDuplicates(arr)
     print(l)
-
-
-
