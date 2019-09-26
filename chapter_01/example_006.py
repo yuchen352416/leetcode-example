@@ -7,10 +7,17 @@ def intersect(nums1: list, nums2: list) -> list:
     nums2.sort()
     i = 0
     j = 0
+    result = []
     while i < len(nums1) and j < len(nums2):
-        pass
-
-    return None
+        if nums1[i] == nums2[j]:
+            result.append(nums1[i])
+            i += 1
+            j += 1
+        elif nums1[i] < nums2[j]:
+            i += 1
+        else:
+            j += 1
+    return result
 
 
 if __name__ == '__main__':
