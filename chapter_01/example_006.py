@@ -2,8 +2,13 @@
 
 # 两个数组的交集
 def intersect(nums1: list, nums2: list) -> list:
-    map = {}
-    # map.
+    # 双指针法
+    nums1.sort()
+    nums2.sort()
+    i = 0
+    j = 0
+    while i < len(nums1) and j < len(nums2):
+        pass
 
     return None
 

@@ -12,6 +12,7 @@ def twoSum(nums: list, target: int) -> list:
         y = target - nums[i]
         if nums.__contains__(y):
             j = nums.index(y, 0)
+            # 防止[3, 3] -> 6:这种情况
             if j != i:
                 return [i, j]
 
