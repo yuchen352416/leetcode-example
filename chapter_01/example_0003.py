@@ -6,9 +6,6 @@ def rotate(nums: list, k: int) -> None:
         nums.insert(0, nums.pop(len(nums) - 1))
 
 
-
-
-
 if __name__ == '__main__':
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     print(arr)
