@@ -1,15 +1,29 @@
 #!/usr/bin/python3
 
+import math
+
 # 整数反转
-def reverseString(s: list) -> None:
-    l = s.__len__()
-    for i in range(l // 2):
-        s[i], s[l - i - 1] = s[l - i - 1], s[i]
+def reverse(x: int) -> int:
+    result = 0
+    flag = 0
+    if x < 0:
+        x = -x
+        flag = 1
+
+    while x > 0:
+        result = (result * 10) + (x % 10)
+        x = x // 10
+
+    if flag == 1:
+        result = -result
+
+    if result > 2147483647 or result < math.pow(-2, 31):
+        return 0
+    return result
 
 
 
 if __name__ == '__main__':
-    arr = ["h", "e", "l", "l", "o"]
-    print(arr)
-    reverseString(arr)
-    print(arr)
+    x = 1534236469
+    result = reverse(x)
+    print(result)
