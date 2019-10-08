@@ -5,6 +5,7 @@ def firstUniqChar(s: str) -> int:
     pass
 
 
+
 if __name__ == '__main__':
     result = firstUniqChar('leetcode')
     print(result)
