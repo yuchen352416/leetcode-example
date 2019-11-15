@@ -1,22 +1,19 @@
 #!/usr/bin/python3
 
-# 有效的字母异位词
-def isAnagram(s: str, t: str) -> bool:
-    dictA = {}
-    dictB = {}
-    if len(s) != len(t):
-        return False
-    else:
-        for i in range(len(s)):
-            dictA[s[i]] = dictA.get(s[i], 0) + 1
-            dictB[t[i]] = dictB.get(t[i], 0) + 1
-        for k, v in dictA.items():
-            if v != dictB.get(k, 0):
-                return False
-        return True
-
+# 验证回文字符串
+def isPalindrome(s: str) -> bool:
+    arr = []
+    s = s.lower()
+    for x in s:
+        if 'a' <= x <= 'z' or '0' <= x <= '9':
+            arr.append(x)
+    for i in range(len(arr)//2):
+        if arr[i] != arr[len(arr) - (i+1)]:
+            return False
+    return True
 
 
 if __name__ == '__main__':
-    result = isAnagram("anagram", "nagaram")
+    result = isPalindrome("A man, a plan, a canal: Panama")
     print(result)
+
