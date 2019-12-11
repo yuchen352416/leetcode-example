@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 # 有效的字母异位词
 def isAnagram(s: str, t: str) -> bool:
     dictA = {}
@@ -14,7 +15,6 @@ def isAnagram(s: str, t: str) -> bool:
             if v != dictB.get(k, 0):
                 return False
         return True
-
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
+
 # 字符串中的第一个唯一字符
 def firstUniqChar(s: str) -> int:
-
     # container = {}
     # if len(s) == 0:
     #     return -1
@@ -26,7 +26,6 @@ def firstUniqChar(s: str) -> int:
         if v == 1:
             return s.index(k)
     return -1
-
 
 
 if __name__ == '__main__':

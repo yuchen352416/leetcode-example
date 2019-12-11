@@ -2,6 +2,7 @@
 
 import math
 
+
 # 整数反转
 def reverse(x: int) -> int:
     result = 0
@@ -20,7 +21,6 @@ def reverse(x: int) -> int:
     if result > 2147483647 or result < math.pow(-2, 31):
         return 0
     return result
-
 
 
 if __name__ == '__main__':

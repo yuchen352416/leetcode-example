@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 # 验证回文字符串
 def isPalindrome(s: str) -> bool:
     arr = []
