@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 def countAndSay(n: int) -> str:
     '''
     外观数列
@@ -10,16 +9,25 @@ def countAndSay(n: int) -> str:
     if n == 1:
         return "1"
     else:
-        maps = {}
+        result = ""
         s = countAndSay(n - 1)
-        for i in range(len(s) - 1):
-            if maps.__contains__(s[i]):
-                maps[s[i]] = maps.get(s[i], 0) + 1
+        maps = {}
+        for i in range(len(s)):
+            keys = list(maps.keys())
+            key = ""
+            if len(keys) == 1:
+                key = keys[0]
+            if key == s[i]:
+                maps[key] = maps.get(key) + 1
             else:
+                val = maps.get(key, "")
+                result = result + val.__str__() + key
+                maps.clear()
                 maps[s[i]] = 1
-        return "11"
+        result = result + list(maps.values())[0].__str__() + list(maps.keys())[0].__str__()
+        return result
 
 
 if __name__ == '__main__':
-    result = countAndSay(5)
+    result = countAndSay(4)
     print(result)
