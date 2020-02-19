@@ -14,10 +14,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    node = ListInitialize([4, 5, 1, 9]).getNode()
-    deleteNode = node
-    while deleteNode.val != 1:
-        deleteNode = deleteNode.next
-    Solution().deleteNode(deleteNode)
-    print(deleteNode.val)
+    node = ListInitialize([1, 2, 3, 4, 5]).getNode()
+    print(node.getArray())
+
 
