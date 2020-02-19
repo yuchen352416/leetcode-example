@@ -4,17 +4,19 @@ from lib.ListLibraries import ListNode, ListInitialize
 
 
 class Solution:
-    def deleteNode(self, node: ListNode):
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         """
-        :type node: ListNode
-        :rtype: void Do not return anything, modify node in-place instead.
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
         """
-        node.val = node.next.val
-        node.next = node.next.next
+
 
 
 if __name__ == '__main__':
-    node = ListInitialize([1, 2, 3, 4, 5]).getNode()
+    arr = [1, 2, 3, 4, 5]
+    node = ListInitialize(arr).getNode()
     print(node.getArray())
+    print(arr[-2])
 
 
