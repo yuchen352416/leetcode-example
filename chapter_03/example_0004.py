@@ -19,20 +19,37 @@ class Solution:
             return l1
 
         i = 0
-        while l1.next is None and l2.next is None:
-            if l1.val < l2.val:
-                node = ListNode(l1.val)
+        first = None
+        tempNode = None
+        while l1 or l2:
+            if l1 and l2:
+                if l1.val < l2.val:
+                    node = ListNode(l1.val)
+                    l1 = l1.next
+                else:
+                    node = ListNode(l2.val)
+                    l2 = l2.next
+            elif l1 is None:
+                node = l2
+                l2 = l2.next
             else:
-                node = ListNode(l2.val)
+                node = l1
+                l1 = l1.next
 
-
-
+            if i == 0:
+                first = node
+                tempNode = node
+            else:
+                tempNode.next = node
+                tempNode = tempNode.next
+            i += 1
+        return first
 
 
 if __name__ == '__main__':
-    l1 = ListInitialize([1, 2, 4])
-    l2 = ListInitialize([1, 3, 4])
-    node = Solution().mergeTwoLists(l1, l2)
+    l1 = ListInitialize([1, 2, 6])
+    l2 = ListInitialize([1, 3, 4, 5, 7, 8, 9])
+    node = Solution().mergeTwoLists(l1.getNode(), l2.getNode())
     print(ListInitialize([]).getArray(node))
 
 
