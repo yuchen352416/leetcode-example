@@ -25,8 +25,17 @@ class ListInitialize:
     def getNode(self) -> ListNode:
         return self.node
 
-    def getCycleNode(self, index: int) -> ListNode:
-        pass
+    def getCycleNode(self, pos: int) -> ListNode:
+        temp = self.node
+        i = 0
+        circuit = None
+        while temp.next is not None:
+            if pos == i:
+                circuit = temp
+            temp = temp.next
+            i += 1
+        temp.next = circuit
+        return self.node
 
     def getArray(self, node: ListNode) -> List:
         arr = []
