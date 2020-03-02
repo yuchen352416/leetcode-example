@@ -10,7 +10,6 @@ class Solution:
         :type head: ListNode
         :rtype: bool
         """
-
         dic = {}
         if head is None or head.next is None:
             return False
