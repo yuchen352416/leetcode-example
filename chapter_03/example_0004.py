@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -47,9 +47,9 @@ class Solution:
 
 
 if __name__ == '__main__':
-    l1 = ListInitialize([1, 2, 6])
-    l2 = ListInitialize([1, 3, 4, 5, 7, 8, 9])
+    l1 = ListNodeInitialize([1, 2, 6])
+    l2 = ListNodeInitialize([1, 3, 4, 5, 7, 8, 9])
     node = Solution().mergeTwoLists(l1.getNode(), l2.getNode())
-    print(ListInitialize([]).getArray(node))
+    print(ListNodeInitialize([]).getArray(node))
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -26,5 +26,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    flag = Solution().isPalindrome(ListInitialize([1]).getNode())
+    flag = Solution().isPalindrome(ListNodeInitialize([1]).getNode())
     print(flag)

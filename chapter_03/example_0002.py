@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -35,7 +35,7 @@ class Solution:
 if __name__ == '__main__':
     arr = [1, 2, 3, 4, 5]
     # arr = [1]
-    init = ListInitialize(arr)
+    init = ListNodeInitialize(arr)
     node = Solution().removeNthFromEnd(init.getNode(), 5)
     print(init.getArray(node))
 

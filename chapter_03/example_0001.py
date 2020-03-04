@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -14,7 +14,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    node = ListInitialize([4, 5, 1, 9]).getNode()
+    node = ListNodeInitialize([4, 5, 1, 9]).getNode()
     deleteNode = node
     while deleteNode.val != 1:
         deleteNode = deleteNode.next

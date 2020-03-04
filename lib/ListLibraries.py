@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from typing import List
+from math import pow
 
 
 class ListNode:
@@ -9,7 +10,7 @@ class ListNode:
         self.next = None
 
 
-class ListInitialize:
+class ListNodeInitialize:
 
     def __init__(self, arr: List[int]):
         if len(arr) == 0:
@@ -45,3 +46,29 @@ class ListInitialize:
                 node = node.next
             arr.append(node.val)
         return arr
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class TreeNodeInitialize:
+
+    def __init__(self, arr: List[int]):
+        if len(arr) == 0:
+            self.root = None
+        else:
+            self.root = TreeNode(arr[0])
+            layer = [arr[: 0]]
+            arr = arr[1:]
+            i = 1
+            # 分层
+            while i < len(arr):
+                print(pow(2, i))
+                i += 1
+
+    def getRoot(self) -> TreeNode:
+        return self.root

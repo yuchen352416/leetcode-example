@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -39,7 +39,7 @@ class Solution:
 if __name__ == '__main__':
     # arr = [1, 2, 3, 4, 5]
     arr = []
-    init = ListInitialize(arr)
+    init = ListNodeInitialize(arr)
     node = Solution().reverseList(init.getNode())
     print(init.getArray(node))
 

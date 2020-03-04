@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from lib.ListLibraries import ListNode, ListInitialize
+from lib.ListLibraries import ListNode, ListNodeInitialize
 
 
 class Solution:
@@ -10,15 +10,15 @@ class Solution:
         :type head: ListNode
         :rtype: bool
         """
-        dic = {}
+        arr = []
         if head is None or head.next is None:
             return False
-        while head is not None:
-            if dic.get(head, 0) != 0:
+        while head.next is not None:
+            if arr.__contains__(head):
                 return True
             else:
-                dic[head] = 1
-            head = head.next
+                arr.append(head)
+                head = head.next
         return False
 
         # 哈希
@@ -67,5 +67,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    flag = Solution().hasCycle(ListInitialize([1, 2, 3, 4, 5, 6, 7, 8, 9]).getCycleNode(-1))
+    flag = Solution().hasCycle(ListNodeInitialize([1, 2, 3, 4, 5, 6, 7, 8, 9]).getCycleNode(7))
     print(flag)
