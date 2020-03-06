@@ -75,11 +75,14 @@ class TreeNodeInitialize:
             for i in range(1, len(treeLayerNodes)):
                 # 遍历每层节点
                 j = 0
-
                 while j < len(treeLayerNodes[i]):
                     treeNodeIndex = j // 2
                     left = TreeNode(treeLayerNodes[i][j])
+                    if left.val is None:
+                        left = None
                     right = TreeNode(treeLayerNodes[i][j + 1])
+                    if right.val is None:
+                        right = None
                     if i == 1:
                         upperLayerNode = treeLayerNodes[0]
                     else:
