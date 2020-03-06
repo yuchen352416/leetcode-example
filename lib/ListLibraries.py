@@ -62,13 +62,33 @@ class TreeNodeInitialize:
             self.root = None
         else:
             self.root = TreeNode(arr[0])
-            layer = [arr[: 0]]
-            arr = arr[1:]
+            index = [0, 1]
             i = 1
-            # 分层
-            while i < len(arr):
-                print(pow(2, i))
+            # 树的每层节点
+            treeLayerNodes = [self.root]
+            while index[1] < len(arr):
+                index[0] = index[1]
+                index[1] = index[0] + int(pow(2, i))
+                treeLayerNodes.append(arr[index[0]: index[1]])
                 i += 1
+
+            for i in range(1, len(treeLayerNodes)):
+                # 遍历每层节点
+                j = 0
+
+                while j < len(treeLayerNodes[i]):
+                    treeNodeIndex = j // 2
+                    left = TreeNode(treeLayerNodes[i][j])
+                    right = TreeNode(treeLayerNodes[i][j + 1])
+                    if i == 1:
+                        upperLayerNode = treeLayerNodes[0]
+                    else:
+                        upperLayerNode = treeLayerNodes[i - 1][treeNodeIndex]
+                    upperLayerNode.left = left
+                    upperLayerNode.right = right
+                    treeLayerNodes[i][treeNodeIndex] = left
+                    treeLayerNodes[i][treeNodeIndex + 1] = right
+                    j += 2
 
     def getRoot(self) -> TreeNode:
         return self.root
