@@ -30,6 +30,7 @@ class Solution:
         # 大神写的
         # if root is None:
         #     return 0
+        # 递归的方法实现
         # return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
 
