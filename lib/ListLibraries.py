@@ -77,20 +77,25 @@ class TreeNodeInitialize:
                 j = 0
                 while j < len(treeLayerNodes[i]):
                     treeNodeIndex = j // 2
-                    left = TreeNode(treeLayerNodes[i][j])
-                    if left.val is None:
+                    if treeLayerNodes[i][j] is None:
                         left = None
-                    right = TreeNode(treeLayerNodes[i][j + 1])
-                    if right.val is None:
+                    else:
+                        left = TreeNode(treeLayerNodes[i][j])
+
+                    if treeLayerNodes[i][j + 1] is None:
                         right = None
+                    else:
+                        right = TreeNode(treeLayerNodes[i][j + 1])
                     if i == 1:
                         upperLayerNode = treeLayerNodes[0]
                     else:
                         upperLayerNode = treeLayerNodes[i - 1][treeNodeIndex]
-                    upperLayerNode.left = left
-                    upperLayerNode.right = right
+                    if upperLayerNode is not None:
+                        upperLayerNode.left = left
+                        upperLayerNode.right = right
                     treeLayerNodes[i][treeNodeIndex] = left
                     treeLayerNodes[i][treeNodeIndex + 1] = right
+
                     j += 2
 
     def getRoot(self) -> TreeNode:
