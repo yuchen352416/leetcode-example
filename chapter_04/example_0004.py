@@ -11,8 +11,22 @@ class Solution:
         type root: TreeNode
         rtype List
         """
-        pass
-
+        if root is None:
+            return []
+        treeNodes = [root]
+        valueArray = []
+        while len(treeNodes) > 0:
+            tempTreeNodes = []
+            itemValue = []
+            for tree in treeNodes:
+                if tree.left is not None:
+                    tempTreeNodes.append(tree.left)
+                if tree.right is not None:
+                    tempTreeNodes.append(tree.right)
+                itemValue.append(tree.val)
+            valueArray.append(itemValue)
+            treeNodes = tempTreeNodes
+        return valueArray
 
 
 if __name__ == '__main__':
@@ -20,4 +34,4 @@ if __name__ == '__main__':
     # root = TreeNodeInitialize([9, -42, -42, None, 76, 76, None, None, 13, None, 13]).getRoot()
     # root = TreeNode(1)
     # root.left = TreeNode(0)
-    print(Solution().isSymmetric(root))
+    print(Solution().levelOrder(root))
